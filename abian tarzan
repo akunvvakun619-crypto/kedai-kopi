@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Prasmanan Muslim - Kelezatan Halal & Prasmanan Lengkap</title>
+    <!-- Font Google & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #1b4d3e;   /* Hijau Halal / Emerald */
+            --secondary-color: #d4a373; /* Warm Gold / Amber */
+            --accent-color: #e76f51;    /* Orange menggugah selera */
+            --bg-light: #fefae0;
+            --text-dark: #2b2d42;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #faf9f6;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Navigation Header */
+        header {
+            background-color: var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(27, 77, 62, 0.85), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 2rem 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+            color: #faedcd;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .badge-halal {
+            background-color: #2a9d8f;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background-color: #ccd5ae;
+            transform: translateY(-2px);
+        }
+
+        /* Features Cards */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: -3rem auto 3rem auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+        }
+
+        /* Section Headings */
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem 0;
+            padding: 0 1rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background: var(--secondary-color);
+            position: absolute;
+            bottom: -8px;
+            left: 25%;
+            border-radius: 2px;
+        }
+
+        /* Menu Section */
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-img-holder {
+            width: 100%;
+            height: 200px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #adb5bd;
+            font-size: 0.9rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .menu-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .menu-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .btn-order-item {
+            background-color: #25d366;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Location & Map Section */
+        .location-section {
+            background-color: #e9edc9;
+            padding: 4rem 1.5rem;
+        }
+
+        .location-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .location-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 1.2rem;
+        }
+
+        .info-item i {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+
+        .map-box {
+            width: 100%;
+            height: 360px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.1rem;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navbar -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-utensils"></i> Warung Prasmanan <span>Muslim</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#menu">Menu & Harga</a></li>
+                <li><a href="#lokasi">Lokasi & Kontak</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="badge-halal"><i class="fa-solid fa-certificate"></i> 100% Halal & Higienis</span>
+            <h1>Warung Prasmanan Muslim</h1>
+            <p>Nikmati ragam masakan rumahan Nusantara khas prasmanan. Prasmanan bebas pilih lauk, porsi puas, rasa lezat, dan harga ramah di kantong!</p>
+            <a href="#menu" class="btn"><i class="fa-solid fa-book-open"></i> Lihat Menu & Harga</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <div class="features">
+        <div class="feature-card">
+            <i class="fa-solid fa-bell-concierge"></i>
+            <h3>Konsep Prasmanan</h3>
+            <p>Bebas pilih variasi lauk dan porsi sesuai selera Anda.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-certificate"></i>
+            <h3>100% Halal</h3>
+            <p>Bahan masakan terjamin halal, segar, dan higienis setiap hari.</p>
+        </div>
+        <div class="feature-card">
+            <i class="fa-solid fa-motorcycle"></i>
+            <h3>Terima Pesanan</h3>
+            <p>Melayani pemesanan nasi kotak & bungkus via WhatsApp.</p>
+        </div>
+    </div>
+
+    <!-- Section Menu & Harga -->
+    <section id="menu">
+        <div class="section-title">
+            <h2>Daftar Menu & Harga</h2>
+            <p style="margin-top: 10px; color: #666;">Aneka hidangan prasmanan lezat yang siap menggugah selera Anda.</p>
+        </div>
+
+        <div class="menu-container">
+            <!-- Item Menu 1 -->
+            <div class="menu-card">
+                <div class="menu-img-holder">
+                    <!-- FOTO AKAN DIPASANG DI SINI -->
+                    <img src="" alt="Foto Nasi Campur Prasmanan" onerror="this.style.display='none'">
+                    <span><i class="fa-regular fa-image"></i> Foto siap diisi</span>
+                </div>
+                <div class="menu-info">
+                    <div>
+                        <div class="menu-title">Nasi Campur Prasmanan</div>
+                        <div class="menu-desc">Nasi hangat dengan pilihan lauk utama (ayam/daging), sayur segar, mie/bihun, serta sambal mantap.</div>
+                    </div>
+                    <div class="menu-bottom">
+                        <div class="price">Rp 15.000 - Rp 25.000</div>
+                        <a href="https://wa.me/6285777524044?text=Halo%20Warung%20Prasmanan%20Muslim,%20saya%20mau%20pesan%20Nasi%20Campur" class="btn-order-item" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Menu 2 -->
+            <div class="menu-card">
+                <div class="menu-img-holder">
+                    <!-- FOTO AKAN DIPASANG DI SINI -->
+                    <img src="" alt="Foto Ayam Goreng / Bakar" onerror="this.style.display='none'">
+                    <span><i class="fa-regular fa-image"></i> Foto siap diisi</span>
+                </div>
+                <div class="menu-info">
+                    <div>
+                        <div class="menu-title">Ayam Goreng / Bakar Bumbu</div>
+                        <div class="menu-desc">Potongan ayam pilihan yang diungkep bumbu rempah meresap, digoreng garing atau dibakar gurih.</div>
+                    </div>
+                    <div class="menu-bottom">
+                        <div class="price">Rp 12.000 / porsi</div>
+                        <a href="https://wa.me/6285777524044?text=Halo%20Warung%20Prasmanan%20Muslim,%20saya%20mau%20pesan%20Ayam%20Goreng/Bakar" class="btn-order-item" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Menu 3 -->
+            <div class="menu-card">
+                <div class="menu-img-holder">
+                    <!-- FOTO AKAN DIPASANG DI SINI -->
+                    <img src="" alt="Foto Rendang Daging" onerror="this.style.display='none'">
+                    <span><i class="fa-regular fa-image"></i> Foto siap diisi</span>
+                </div>
+                <div class="menu-info">
+                    <div>
+                        <div class="menu-title">Rendang / Semur Daging</div>
+                        <div class="menu-desc">Olahan daging sapi empuk dengan bumbu rempah kaya rasa khas masakan Nusantara.</div>
+                    </div>
+                    <div class="menu-bottom">
+                        <div class="price">Rp 15.000 / porsi</div>
+                        <a href="https://wa.me/6285777524044?text=Halo%20Warung%20Prasmanan%20Muslim,%20saya%20mau%20pesan%20Daging%20Rendang" class="btn-order-item" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Menu 4 -->
+            <div class="menu-card">
+                <div class="menu-img-holder">
+                    <!-- FOTO AKAN DIPASANG DI SINI -->
+                    <img src="" alt="Foto Ikan Balado / Bakar" onerror="this.style.display='none'">
+                    <span><i class="fa-regular fa-image"></i> Foto siap diisi</span>
+                </div>
+                <div class="menu-info">
+                    <div>
+                        <div class="menu-title">Ikan Laut / Tongkol Balado</div>
+                        <div class="menu-desc">Ikan segar olahan bumbu balado pedas manis yang cocok disandingkan dengan nasi hangat.</div>
+                    </div>
+                    <div class="menu-bottom">
+                        <div class="price">Rp 10.000 - Rp 15.000</div>
+                        <a href="https://wa.me/6285777524044?text=Halo%20Warung%20Prasmanan%20Muslim,%20saya%20mau%20pesan%20Ikan%20Balado" class="btn-order-item" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Menu 5 -->
+            <div class="menu-card">
+                <div class="menu-img-holder">
+                    <!-- FOTO AKAN DIPASANG DI SINI -->
+                    <img src="" alt="Foto Sayur Tumis" onerror="this.style.display='none'">
+                    <span><i class="fa-regular fa-image"></i> Foto siap diisi</span>
+                </div>
+                <div class="menu-info">
+                    <div>
+                        <div class="menu-title">Aneka Sayur Tumis & Orak-Arik</div>
+                        <div class="menu-desc">Pilihan sayuran segar harian seperti tumis kangkung, capcay, urap, hingga lodeh.</div>
+                    </div>
+                    <div class="menu-bottom">
+                        <div class="price">Rp 5.000 / porsi</div>
+                        <a href="https://wa.me/6285777524044?text=Halo%20Warung%20Prasmanan%20Muslim,%20saya%20mau%20pesan%20Sayur" class="btn-order-item" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item Menu 6 -->
+            <div class="menu-card">
+                <div class="menu-img-holder">
+                    <!-- FOTO AKAN DIPASANG DI SINI -->
+                    <img src="" alt="Foto Minuman" onerror="this.style.display='none'">
+                    <span><i class="fa-regular fa-image"></i> Foto siap diisi</span>
+                </div>
+                <div class="menu-info">
+                    <div>
+                        <div class="menu-title">Es Teh / Es Jeruk / Minuman Segar</div>
+                        <div class="menu-desc">Pelengkap sempurna santapan makan siang Anda. Teh manis dingin, es jeruk, dan air mineral.</div>
+                    </div>
+                    <div class="menu-bottom">
+                        <div class="price">Rp 4.000 - Rp 6.000</div>
+                        <a href="https://wa.me/6285777524044?text=Halo%20Warung%20Prasmanan%20Muslim,%20saya%20mau%20pesan%20Minuman" class="btn-order-item" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> Pesan
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Lokasi & Kontak -->
+    <section class="location-section" id="lokasi">
+        <div class="location-container">
+            <div class="location-info">
+                <h3>Lokasi & Jam Buka</h3>
+                <p style="margin-bottom: 1.5rem;">Kunjungi warung kami langsung untuk menikmati sajian prasmanan hangat nan lezat.</p>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Alamat Warung:</strong><br>
+                        Warung Prasmanan Muslim, Subagan, Kec. Karangasem, Kabupaten Karangasem, Bali.
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <strong>Jam Operasional:</strong><br>
+                        Buka Setiap Hari: 07.00 - 20.00 WITA
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Telepon / WhatsApp Pemilik:</strong><br>
+                        0857-7752-4044
+                    </div>
+                </div>
+
+                <!-- Tombol Navigasi Google Maps Sesuai Link -->
+                <a href="https://maps.app.goo.gl/5dMVV3SZtrSbidzr7?g_st=ac" target="_blank" class="btn" style="margin-top: 1rem;">
+                    <i class="fa-solid fa-route"></i> Petunjuk Arah Google Maps
+                </a>
+            </div>
+
+            <!-- Embedded Google Map Frame -->
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.828!2d115.6027!3d-8.4554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOMKwMjcnMTkuNCJTIDExNcKwMzYnMDkuNyJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Call-to-Action -->
+    <a href="https://wa.me/6285777524044?text=Halo%20Warung%20Prasmanan%20Muslim,%20saya%20ingin%20bertanya/memesan" class="floating-wa" target="_blank" title="Chat Pemilik Toko">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Warung Prasmanan Muslim Subagan. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
